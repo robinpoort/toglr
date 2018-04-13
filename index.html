@@ -1,20 +1,36 @@
-# Toglr
-Simple CSS only responsive menu toggler. Works great for single level menus. Inspired by apple.com
+<!DOCTYPE html>
+<html lang="nl" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toglr</title>
+    <link rel="stylesheet" href="dist/css/toglr.css">
+    <style type="text/css">
+        body {
+            background: #ecf0f1;
+            font-family: sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
 
-## Demo
-* https://robinpoort.github.io/toglr/ (still need to style this)
+        .toglr-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            display: flex;
+            justify-content: center;
+        }
 
-## Features:
-- Has anchor buttons fallback for when JS is disabled
-- When JS is disabled anchors are keyboard accessible, however focus is "lost" after pressing. On opening the open button disappears and the next tab will be to the closing button.
-- Using CSS `:target` to open the menu when JS is disabled
-- Bare bones CSS
-- Showing/hiding different open/close labels 
-- Added onKeyPress for enabling enter key on the label to `:check` the input
+        .toglr-nav a {
+            display: block;
+            padding: 4px 12px;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
 
-## Use
-
-```html
 <!-- Replace no-js class with js class -->
 <script type="text/javascript">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.documentElement;var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg," js")}</script>
 
@@ -34,22 +50,26 @@ Simple CSS only responsive menu toggler. Works great for single level menus. Ins
 <!-- The navigation -->
 <nav class="toglr-nav" aria-labelledby="main-menu-label">
     <h2 id="main-menu-label" class="visually-hidden">Main Menu</h2>
-    <ul class="toglr-menu">
+    <ul class="toglr-menu" data-menu-animation>
         <li role="menuitem">
-            <a href="#">Item</a>
+            <a href="javascript:void(0)">Item</a>
         </li>
         <li role="menuitem">
-            <a href="#">Item</a>
+            <a href="javascript:void(0)">Item</a>
         </li>
         <li role="menuitem">
-            <a href="#">Item</a>
+            <a href="javascript:void(0)">Item</a>
         </li>
         <li role="menuitem">
-            <a href="#">Item</a>
+            <a href="javascript:void(0)">Item</a>
         </li>
         <li role="menuitem">
-            <a href="#">Item</a>
+            <a href="javascript:void(0)">Item</a>
         </li>
     </ul>
 </nav>
-```
+
+<p>Make your screen smaller than 800px to see the menu in action</p>
+
+</body>
+</html>

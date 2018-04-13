@@ -1,0 +1,77 @@
+.toglr-input {
+  display: none;
+}
+
+.toglr-input:checked ~ .toglr-nav {
+  display: block;
+}
+
+.toglr-input:checked ~ .toglr-togglers .toglr-label-open {
+  display: none;
+}
+
+.toglr-input:checked ~ .toglr-togglers .toglr-label-close {
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+  .toglr-togglers {
+    display: none;
+  }
+}
+
+.toglr-label {
+  display: none;
+}
+
+.toglr-open,
+.toglr-label-open {
+  display: block;
+}
+
+.toglr-close,
+.toglr-label-close {
+  display: none;
+}
+
+.toglr-nav {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .toglr-nav {
+    display: block;
+  }
+}
+
+html:not(.js) #open-menu:target ~ .toglr-togglers .toglr-open {
+  display: none;
+}
+
+html:not(.js) #open-menu:target ~ .toglr-togglers .toglr-close {
+  display: block;
+}
+
+html:not(.js) #open-menu:target ~ .toglr-nav {
+  display: block;
+}
+
+.js .toglr-open,
+.js .toglr-close {
+  display: none;
+}
+
+.js .toglr-label {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
